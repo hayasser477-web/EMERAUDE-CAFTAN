@@ -1,0 +1,125 @@
+
+.legal-page {
+  --legal-bg: #f8f5ef;
+  --legal-navy: #1b2631;
+  --legal-gold: #d4af37;
+  --legal-beige: #f2dfb5;
+  --legal-text: #4b5359;
+
+  min-height: 100vh;
+  background: var(--legal-bg);
+  color: var(--legal-text);
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+
+.legal-hero {
+  padding: 85px 24px 75px;
+  background: var(--legal-navy);
+  text-align: center;
+}
+
+.legal-eyebrow {
+  color: var(--legal-gold);
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.legal-hero h1 {
+  margin: 22px 0 15px;
+  color: var(--legal-beige);
+  font-family: Georgia, serif;
+  font-size: clamp(29px, 4vw, 46px);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.legal-hero p {
+  max-width: 540px;
+  margin: 0 auto;
+  color: #c1c9ce;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* Content */
+
+.legal-content {
+  width: min(100% - 40px, 850px);
+  margin: 0 auto;
+  padding: 65px 0 85px;
+}
+
+.legal-content section {
+  margin-bottom: 36px;
+  padding-bottom: 27px;
+  border-bottom: 1px solid rgba(27, 38, 49, 0.12);
+}
+
+.legal-content section:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.legal-content h2 {
+  margin: 0 0 15px;
+  color: var(--legal-navy);
+  font-family: Georgia, serif;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.legal-content p {
+  margin: 0 0 12px;
+  color: var(--legal-text);
+  font-size: 14px;
+  line-height: 2;
+  overflow-wrap: anywhere;
+}
+
+.legal-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .legal-hero {
+    padding: 65px 20px 55px;
+  }
+
+  .legal-eyebrow {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .legal-hero h1 {
+    margin-top: 18px;
+    font-size: 29px;
+  }
+
+  .legal-hero p {
+    font-size: 13px;
+  }
+
+  .legal-content {
+    width: calc(100% - 40px);
+    padding: 42px 0 55px;
+  }
+
+  .legal-content section {
+    margin-bottom: 28px;
+    padding-bottom: 23px;
+  }
+
+  .legal-content h2 {
+    font-size: 19px;
+  }
+
+  .legal-content p {
+    font-size: 13px;
+    line-height: 1.9;
+  }
+}

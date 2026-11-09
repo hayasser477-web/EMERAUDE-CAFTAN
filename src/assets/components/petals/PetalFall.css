@@ -1,0 +1,48 @@
+
+.petal-fall {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.petal-fall__emoji {
+  position: absolute;
+  top: -40px;
+  display: block;
+  opacity: 0;
+  line-height: 1;
+  user-select: none;
+
+  animation: flower-gentle-fall linear infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes flower-gentle-fall {
+  0% {
+    transform: translate3d(0, -5vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+
+  12% {
+    opacity: 0.85;
+  }
+
+  75% {
+    opacity: 0.8;
+  }
+
+  100% {
+    transform:
+      translate3d(var(--petal-drift), 110vh, 0)
+      rotate(300deg);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .petal-fall {
+    display: none;
+  }
+}

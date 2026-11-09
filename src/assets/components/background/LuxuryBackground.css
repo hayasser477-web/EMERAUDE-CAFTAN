@@ -1,0 +1,29 @@
+
+.luxury-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: #1B2631;
+}
+
+.luxury-background__veins {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.62;
+}
+
+.luxury-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse at 50% 35%,
+      transparent 15%,
+      rgb(10 17 24 / 22%) 100%
+    );
+}

@@ -1,0 +1,378 @@
+.faq {
+  position: relative;
+  width: 100%;
+  padding: clamp(65px, 8vw, 110px) 20px;
+  box-sizing: border-box;
+  color: #f2dfb5;
+  background: transparent;
+  overflow: hidden;
+}
+
+.faq *,
+.faq *::before,
+.faq *::after {
+  box-sizing: border-box;
+}
+
+.faq__container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.faq__heading {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 25px;
+}
+
+.faq__eyebrow {
+  display: inline-block;
+  color: #d4af37;
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-bottom: 17px;
+}
+
+.faq__title {
+  margin: 0;
+  color: #f2dfb5;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: clamp(30px, 4.5vw, 48px);
+  line-height: 1.2;
+}
+
+.faq__subtitle {
+  margin: 17px auto 0;
+  max-width: 500px;
+  color: rgba(242, 223, 181, 0.76);
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.faq__heading-line {
+  width: 65px;
+  height: 1px;
+  margin: 27px auto 0;
+  background: #d4af37;
+}
+
+.faq__instruction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 auto 38px;
+  color: #d4af37;
+  font-size: 12px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.faq__instruction svg {
+  flex-shrink: 0;
+}
+
+.faq__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+
+/* تمركز البطاقة الأخيرة في المنتصف (العمود الثاني) في الشاشات التي تحتوي على 3 أعمدة */
+@media (min-width: 851px) {
+  .faq__book:last-child {
+    grid-column: 2;
+  }
+}
+
+.faq__book {
+  position: relative;
+  min-width: 0;
+  perspective: 1200px;
+}
+
+/* غلاف الكتاب */
+
+.faq__cover {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 270px;
+  padding: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.7);
+  border-radius: 3px 8px 8px 3px;
+  color: #f2dfb5;
+  background: linear-gradient(125deg, #243544 0%, #1b2631 55%, #111a22 100%);
+  box-shadow:
+    0 12px 25px rgba(0, 0, 0, 0.23),
+    inset 5px 0 0 rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  text-align: center;
+  font: inherit;
+  transform-origin: left center;
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+  z-index: 2;
+}
+
+.faq__cover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 9px;
+  width: 1px;
+  background: rgba(212, 175, 55, 0.38);
+}
+
+.faq__cover:hover {
+  border-color: #d4af37;
+  box-shadow:
+    0 18px 32px rgba(0, 0, 0, 0.32),
+    inset 5px 0 0 rgba(0, 0, 0, 0.18);
+}
+
+.faq__cover:focus-visible {
+  outline: 2px solid #f2dfb5;
+  outline-offset: 5px;
+}
+
+.faq__cover-border {
+  display: flex;
+  min-height: 244px;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 16px 13px;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+}
+
+.faq__number {
+  align-self: flex-start;
+  color: #d4af37;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.faq__cover-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d4af37;
+  margin-top: 4px;
+}
+
+.faq__question {
+  display: block;
+  max-width: 250px;
+  margin: 0 auto;
+  color: #f2dfb5;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(17px, 1.7vw, 21px);
+  font-weight: 400;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.faq__open-hint {
+  display: inline-block;
+  color: rgba(242, 223, 181, 0.82);
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+.faq__cover-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  color: #d4af37;
+}
+
+.faq__ornament {
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: #d4af37;
+}
+
+.faq__chevron {
+  transition: transform 0.35s ease;
+}
+
+.faq__book.is-open .faq__chevron {
+  transform: rotate(180deg);
+}
+
+/* صفحات الكتاب */
+
+.faq__pages {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  margin-top: 0;
+  overflow: hidden;
+  background: #f2dfb5;
+  color: #1b2631;
+  border-radius: 2px 5px 5px 2px;
+  transition:
+    grid-template-rows 0.45s ease,
+    opacity 0.35s ease,
+    margin-top 0.35s ease;
+}
+
+.faq__page-content {
+  min-height: 0;
+  overflow: hidden;
+  padding: 0 22px;
+  border: 1px solid rgba(212, 175, 55, 0.75);
+}
+
+.faq__book.is-open .faq__pages {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  margin-top: 12px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.16);
+}
+
+.faq__book.is-open .faq__page-content {
+  padding: 25px 22px 20px;
+}
+
+.faq__page-label {
+  display: block;
+  color: #8b6b19;
+  font-size: 9px;
+  letter-spacing: 1.8px;
+  margin-bottom: 15px;
+}
+
+.faq__page-content h3 {
+  margin: 0 0 13px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.faq__page-content p {
+  margin: 0;
+  color: #35404a;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+
+.faq__page-decoration {
+  display: block;
+  margin-top: 23px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(139, 107, 25, 0.35);
+  color: #8b6b19;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+
+/* التواصل */
+
+.faq__contact {
+  margin-top: 43px;
+  text-align: center;
+}
+
+.faq__contact p {
+  margin: 0 0 15px;
+  color: rgba(242, 223, 181, 0.82);
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.faq__contact a {
+  display: inline-block;
+  padding: 12px 25px;
+  border: 1px solid #d4af37;
+  color: #f2dfb5;
+  text-decoration: none;
+  font-size: 12px;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.faq__contact a:hover {
+  background: #d4af37;
+  color: #1b2631;
+}
+
+@media (max-width: 850px) {
+  .faq__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .faq__cover {
+    min-height: 260px;
+  }
+
+  .faq__cover-border {
+    min-height: 234px;
+  }
+}
+
+@media (max-width: 520px) {
+  .faq {
+    padding: 58px 14px;
+  }
+
+  .faq__grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .faq__cover {
+    min-height: 225px;
+  }
+
+  .faq__cover-border {
+    min-height: 199px;
+    padding: 13px 12px;
+    gap: 11px;
+  }
+
+  .faq__question {
+    font-size: 19px;
+  }
+
+  .faq__instruction {
+    max-width: 320px;
+    margin-bottom: 28px;
+  }
+
+  .faq__contact {
+    margin-top: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq *,
+  .faq *::before,
+  .faq *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

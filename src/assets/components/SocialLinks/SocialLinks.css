@@ -1,0 +1,363 @@
+
+.social-links {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 75px 24px;
+  overflow: hidden;
+  box-sizing: border-box;
+  color: #f2dfb5;
+  background: transparent;
+}
+
+.social-links *,
+.social-links *::before,
+.social-links *::after {
+  box-sizing: border-box;
+}
+
+.social-links__container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.social-links__eyebrow {
+  display: inline-block;
+  margin-bottom: 19px;
+  color: #d4af37;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  direction: ltr;
+}
+
+.social-links__title {
+  margin: 0;
+  color: #f2dfb5;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 5vw, 54px);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.social-links__description {
+  max-width: 520px;
+  margin: 17px auto 0;
+  color: rgba(242, 223, 181, 0.72);
+  font-size: 14px;
+  line-height: 2;
+}
+
+.social-links__divider {
+  display: block;
+  width: 65px;
+  height: 1px;
+  margin: 29px auto 42px;
+  background: linear-gradient(
+    to left,
+    transparent,
+    #d4af37,
+    transparent
+  );
+}
+
+/* بطاقات التواصل */
+
+.social-links__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.social-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 270px;
+  padding: 30px 18px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 3px;
+  color: #f2dfb5;
+  background: linear-gradient(
+    145deg,
+    rgba(36, 53, 68, 0.75),
+    rgba(17, 26, 34, 0.48)
+  );
+  text-decoration: none;
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    background 0.4s ease;
+}
+
+.social-card::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(212, 175, 55, 0.12);
+  pointer-events: none;
+  transition: border-color 0.4s ease;
+}
+
+.social-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #d4af37;
+  transform: translateX(-50%);
+  transition: width 0.4s ease;
+}
+
+.social-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(212, 175, 55, 0.9);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(
+    145deg,
+    rgba(36, 53, 68, 0.95),
+    rgba(17, 26, 34, 0.8)
+  );
+}
+
+.social-card:hover::before {
+  border-color: rgba(212, 175, 55, 0.35);
+}
+
+.social-card:hover::after {
+  width: 70%;
+}
+
+.social-card:focus-visible {
+  outline: 2px solid #f2dfb5;
+  outline-offset: 5px;
+}
+
+/* إطار الشعار */
+
+.social-card__icon {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  height: 76px;
+  margin-bottom: 23px;
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  border-radius: 50%;
+  color: #d4af37;
+  font-size: 29px;
+  transition:
+    color 0.35s ease,
+    background 0.35s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.social-card:hover .social-card__icon {
+  color: #1b2631;
+  background: #d4af37;
+  transform: scale(1.06);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+}
+
+.social-card__name {
+  position: relative;
+  z-index: 1;
+  color: #f2dfb5;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 23px;
+  line-height: 1.5;
+}
+
+.social-card__description {
+  position: relative;
+  z-index: 1;
+  margin-top: 8px;
+  color: rgba(242, 223, 181, 0.65);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.social-card__action {
+  position: relative;
+  z-index: 1;
+  margin-top: 22px;
+  color: #d4af37;
+  font-size: 11px;
+  transition: letter-spacing 0.3s ease;
+}
+
+.social-card:hover .social-card__action {
+  letter-spacing: 0.4px;
+}
+
+/* الخاتمة */
+
+.social-links__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 17px;
+  margin-top: 43px;
+}
+
+.social-links__bottom p {
+  margin: 0;
+  color: rgba(242, 223, 181, 0.7);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.social-links__bottom-line {
+  width: 28px;
+  height: 1px;
+  flex-shrink: 0;
+  background: rgba(212, 175, 55, 0.6);
+}
+
+/* الأجهزة اللوحية */
+
+@media (max-width: 760px) {
+  .social-links {
+    padding: 70px 22px;
+  }
+
+  .social-links__grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin: 0 auto;
+    gap: 15px;
+  }
+
+  .social-card {
+    display: grid;
+    grid-template-columns: 60px minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    justify-items: start;
+    align-content: center;
+    column-gap: 17px;
+    min-height: 112px;
+    padding: 20px;
+    text-align: right;
+  }
+
+  .social-card__icon {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    width: 58px;
+    height: 58px;
+    margin: 0;
+    font-size: 23px;
+  }
+
+  .social-card__name {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+    font-size: 20px;
+  }
+
+  .social-card__description {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+    margin-top: 4px;
+  }
+
+  .social-card__action {
+    grid-column: 3;
+    grid-row: 1 / 3;
+    align-self: center;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  .social-links__divider {
+    margin-bottom: 32px;
+  }
+
+  .social-links__bottom {
+    margin-top: 32px;
+  }
+}
+
+/* الهواتف الصغيرة */
+
+@media (max-width: 420px) {
+  .social-links {
+    padding: 55px 15px;
+  }
+
+  .social-links__eyebrow {
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
+
+  .social-links__description {
+    font-size: 12px;
+  }
+
+  .social-card {
+    grid-template-columns: 48px minmax(0, 1fr);
+    column-gap: 13px;
+    min-height: 100px;
+    padding: 15px;
+  }
+
+  .social-card__icon {
+    width: 46px;
+    height: 46px;
+    font-size: 20px;
+  }
+
+  .social-card__name {
+    font-size: 18px;
+  }
+
+  .social-card__description {
+    font-size: 11px;
+  }
+
+  .social-card__action {
+    display: none;
+  }
+
+  .social-links__bottom {
+    gap: 10px;
+  }
+
+  .social-links__bottom p {
+    font-size: 12px;
+  }
+
+  .social-links__bottom-line {
+    width: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-card,
+  .social-card::before,
+  .social-card::after,
+  .social-card__icon,
+  .social-card__action {
+    transition: none !important;
+  }
+}

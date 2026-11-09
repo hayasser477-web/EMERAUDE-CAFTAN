@@ -1,0 +1,453 @@
+
+/* =========================================
+   CHANEZ COLLECTION — HOME
+========================================= */
+
+.home {
+  position: relative;
+  isolation: isolate;
+
+  width: 100%;
+  height: calc(100vh - 82px);
+  height: calc(100svh - 82px);
+  min-height: 500px;
+
+  box-sizing: border-box;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #f5f0e7;
+  text-align: center;
+
+  background-color: #1b2631;
+  background-image: url("../../images/img (17).webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* =========================================
+   الخلفية الفاخرة
+========================================= */
+
+.home > .luxury-background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+}
+
+/* =========================================
+   طبقة التعتيم الفاخرة
+========================================= */
+
+.home__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    180deg,
+    rgba(16, 27, 39, 0.42) 0%,
+    rgba(16, 27, 39, 0.28) 45%,
+    rgba(16, 27, 39, 0.58) 100%
+  );
+}
+
+/* =========================================
+   محتوى الصفحة
+========================================= */
+
+.home__content {
+  position: relative;
+  z-index: 1;
+
+  width: min(90%, 1000px);
+  margin-inline: auto;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  gap: 22px;
+  padding: 60px 0;
+
+  animation: homeReveal 1.4s ease both;
+}
+
+/* الوصف الفرنسي العلوي */
+
+.home__eyebrow {
+  margin: 0;
+
+  color: #d5b77a;
+
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  line-height: 1.8;
+}
+
+/* اسم العلامة التجارية */
+
+.home__title {
+  width: 100%;
+  margin: 0;
+
+  color: #e0c58e;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 5.5vw, 66px);
+  font-weight: 400;
+
+  letter-spacing: clamp(2px, 0.6vw, 7px);
+  line-height: 1.35;
+
+  text-wrap: balance;
+}
+
+/* الخط الذهبي */
+
+.home__divider {
+  display: block;
+
+  width: 54px;
+  height: 1px;
+
+  flex-shrink: 0;
+
+  background: #c5a059;
+}
+
+/* العبارة العربية */
+
+.home__description {
+  max-width: 100%;
+  margin: 0;
+
+  color: #f5f0e7;
+
+  font-family: inherit;
+  font-size: clamp(24px, 3vw, 35px);
+  font-weight: 400;
+  line-height: 1.8;
+
+  text-align: center;
+}
+
+/* =========================================
+   زر اكتشف منتجاتنا
+========================================= */
+
+.home__button {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  min-height: 62px;
+  margin-top: 18px;
+  padding: 0 34px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #c5a059;
+  border-radius: 2px;
+
+  background: rgba(20, 32, 44, 0.58);
+  color: #f3dfb3;
+
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 400;
+
+  cursor: pointer;
+
+  animation: gentleShake 0.8s linear infinite;
+
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* الاهتزاز المستمر */
+
+@keyframes gentleShake {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  50% {
+    transform: translateX(0);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* تأثير المرور */
+
+.home__button:hover {
+  background: #c5a059;
+  color: #17232e;
+  border-color: #c5a059;
+  box-shadow: 0 5px 24px rgba(197, 160, 89, 0.16);
+}
+
+/* الوصول بلوحة المفاتيح */
+
+.home__button:focus-visible {
+  outline: 2px solid #f3dfb3;
+  outline-offset: 5px;
+}
+
+/* السهم */
+
+.home__arrow {
+  display: inline-block;
+
+  transition: transform 0.35s ease;
+}
+
+.home__button:hover .home__arrow {
+  transform: translateX(-4px);
+}
+
+/* =========================================
+   العبارة السفلية
+========================================= */
+
+.home__bottom {
+  position: absolute;
+  z-index: 1;
+
+  bottom: 24px;
+  left: 16px;
+  right: 16px;
+
+  margin: 0;
+
+  text-align: center;
+
+  color: rgba(232, 222, 202, 0.78);
+
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   ظهور ناعم للمحتوى
+========================================= */
+
+@keyframes homeReveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   الأجهزة اللوحية والهواتف
+========================================= */
+
+@media (max-width: 600px) {
+  .home {
+    height: calc(100vh - 72px);
+    height: calc(100svh - 72px);
+    min-height: 480px;
+
+    background-image: url("../../images/img (17).webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .home > .luxury-background {
+    display: none;
+  }
+
+  .home__content {
+    width: 92%;
+    margin-inline: auto;
+
+    gap: 18px;
+    padding: 48px 0 64px;
+  }
+
+  .home__eyebrow {
+    font-size: 9px;
+    letter-spacing: 1.8px;
+  }
+
+  .home__title {
+    font-size: clamp(27px, 8vw, 42px);
+    letter-spacing: 2px;
+    line-height: 1.4;
+  }
+
+  .home__description {
+    font-size: 25px;
+  }
+
+  .home__button {
+    min-height: 56px;
+    padding: 0 25px;
+
+    font-size: 16px;
+    gap: 13px;
+  }
+
+  .home__bottom {
+    bottom: 16px;
+
+    font-size: 8px;
+    letter-spacing: 1.3px;
+  }
+}
+
+/* الشاشات الصغيرة جدًا */
+
+@media (max-width: 360px) {
+  .home__title {
+    font-size: 26px;
+    letter-spacing: 1px;
+  }
+
+  .home__eyebrow {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .home__button {
+    padding: 0 20px;
+  }
+}
+
+/* =========================================
+   الخلفية الفاخرة للشاشات الأكبر من 600px
+========================================= */
+
+@media (min-width: 601px) {
+  .home {
+    background-image: none;
+    background-color: #1b2631;
+  }
+
+  .home > .luxury-background {
+    display: block;
+  }
+}
+
+/* =========================================
+   احترام إعدادات تقليل الحركة
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .home__content {
+    animation: none;
+  }
+
+  .home__button {
+    animation: none;
+  }
+
+  .home__button,
+  .home__arrow {
+    transition: none;
+  }
+}
+
+/* =================================
+   MOBILE SLIDESHOW BACKGROUND
+================================= */
+
+.home__mobile-background {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  .home__desktop-background {
+    display: none;
+  }
+
+  .home__mobile-background {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .home__mobile-slide {
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    opacity: 0;
+    transform: scale(1);
+
+    transition:
+      opacity 1.5s ease-in-out,
+      transform 6s ease;
+
+    will-change: opacity, transform;
+  }
+
+  .home__mobile-slide.active {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+
+  .home__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .home__content,
+  .home__bottom {
+    position: relative;
+    z-index: 2;
+  }
+}
